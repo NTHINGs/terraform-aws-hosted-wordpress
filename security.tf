@@ -37,7 +37,7 @@ resource "aws_security_group_rule" "ingress_reply" {
 resource "aws_security_group_rule" "ingress_ssh" {
   security_group_id = "${aws_security_group.wordpress_security_group.id}"
   type              = "ingress"
-  cidr_blocks       = ["${var.local_ip}/32"]
+  cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "tcp"
   from_port         = 22
   to_port           = 22
